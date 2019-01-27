@@ -10,7 +10,6 @@
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-google-maps": "^9.4.5",
     "react-scripts": "2.1.3",
     "sort-by": "^1.2.0"
   },

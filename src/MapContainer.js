@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Map, InfoWindow, GoogleApiWrapper} from  'google-maps-react'
+import MapLoading from './MapLoading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 
@@ -142,6 +143,7 @@ class MapContainer extends Component {
                     src={location.photos[0].prefix + "100x100" + location.photos[0].suffix}
                     alt={location.name + " photo"}
                   />
+                  <p>Image courtesy of Foursquare</p>
                 </div>
               ) : (<div></div>)}
               <div className="info-window-address">
@@ -167,4 +169,7 @@ class MapContainer extends Component {
   }
 }
 
-export default GoogleApiWrapper({apiKey: MAPS_API_KEY})(MapContainer)
+export default GoogleApiWrapper({
+  apiKey: MAPS_API_KEY,
+  LoadingContainer: MapLoading
+})(MapContainer)
