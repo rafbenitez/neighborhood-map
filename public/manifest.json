@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Board Gaming",
+  "name": "Denver Board Gaming Spots",
   "icons": [
     {
       "src": "favicon.ico",

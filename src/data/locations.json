@@ -1,0 +1,103 @@
+[
+  {
+    "name": "Board Game Republic",
+    "street": "900 W 1st Ave #130",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80223",
+    "url": "https://www.boardgamerepublic.com/",
+    "pos": {"lat": 39.71767, "lng": -104.99883}
+    },
+    {
+    "name": "Enchanted Grounds",
+    "street": "8800 S Colorado Blvd",
+    "city": "Highlands Ranch",
+    "state": "CO",
+    "zip": "80126",
+    "url": "http://www.enchantedgrounds.com/",
+    "pos": {"lat": 39.55715, "lng": -104.94112}
+    },
+    {
+      "name": "Enchanted Grounds",
+      "street": "3615 W Bowles Ave #5",
+      "city": "Littleton",
+      "state": "CO",
+      "zip": "80123",
+      "url": "http://www.enchantedgrounds.com/",
+      "pos": {"lat": 39.60995, "lng": -105.03486}
+    },
+    {
+      "name": "Crit Castle Games",
+      "street": "414 S Chambers Rd",
+      "city": "Aurora",
+      "state": "CO",
+      "zip": "80017",
+      "url": "https://www.critcastle.com/",
+      "pos": {"lat": 39.70762, "lng": -104.80698}
+    },
+    {
+      "name": "Denver Central Games",
+      "street": "10101 E Hampden Ave #102",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80231",
+      "url": "https://www.denvercentralgames.com/",
+      "pos": {"lat": 39.654, "lng": -104.86948}
+    },
+    {
+      "name": "All C's Gaming Arena",
+      "street": "1254 S Abilene St",
+      "city": "Aurora",
+      "state": "CO",
+      "zip": "80012",
+      "url": "http://www.allcscollectibles.com/",
+      "pos": {"lat": 39.69448, "lng": -104.82689}
+    },
+    {
+      "name": "The Wizard's Chest",
+      "street": "451 Broadway",
+      "city": "Denver",
+      "state": "CO",
+      "zip": "80203",
+      "url": "http://wizardschest.com/wordpress/",
+      "pos": {"lat": 39.72362, "lng": -104.98798}
+    },
+    {
+      "name": "Black Gold",
+      "street": "8966 W Bowles Ave",
+      "city": "Littleton",
+      "state": "CO",
+      "zip": "80123",
+      "url": "http://www.blackgoldmagic.com/",
+      "pos": {"lat": 39.60894, "lng": -105.09623}
+    },
+    {
+      "name": "Game Heroes",
+      "street": "6680 Wadsworth Blvd",
+      "city": "Arvada",
+      "state": "CO",
+      "zip": "80003",
+      "url": "http://gameheroesonline.com/",
+      "pos": {"lat": 39.81799, "lng": -105.0809}
+    },
+    {
+      "name": "Games Workshop",
+      "street": "1112 S Colorado Blvd",
+      "city": "Glendale",
+      "state": "CO",
+      "zip": "80246",
+      "url": "https://www.games-workshop.com/en-US/Games-Workshop-Square-One-Denver?_requestid=2266782",
+      "pos": {"lat": 39.69623, "lng": -104.93959}
+    },
+    {
+      "name": "The Tabletop Tap",
+      "street": "3394 S Broadway",
+      "city": "Englewood",
+      "state": "CO",
+      "zip": "80113",
+      "url": "https://www.facebook.com/tabletoptap/",
+      "pos": {"lat": 39.65518, "lng": -104.98738}
+    }
+]
+
+
