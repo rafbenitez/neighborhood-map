@@ -27,6 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * [React](https://reactjs.org/)
 * [ReactDOM](https://reactjs.org/docs/react-dom.html)
 * [Create React App](https://github.com/facebook/create-react-app)
+* [Foursquare](https://developer.foursquare.com/docs)
 * [Font Awesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
 * [google-maps-react](https://www.npmjs.com/package/google-maps-react)
 * [prop-types](https://www.npmjs.com/package/prop-types)

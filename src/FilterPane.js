@@ -58,12 +58,7 @@ class FilterPane extends Component {
           </ol>
         </div>
       </div>
-
-
-
-
-
-)
+    )
   }
 }
 

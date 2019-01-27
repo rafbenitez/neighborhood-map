@@ -6,6 +6,9 @@ import PropTypes from 'prop-types'
 
 const MAPS_API_KEY='AIzaSyCdKuhS-Bxv3iBsGlsIiuMbB3rxM8D1Pbw'
 
+// Referenced this article when coding this component
+// https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
+
 class MapContainer extends Component {
   static propTypes = {
     lat: PropTypes.number.isRequired,
@@ -134,37 +137,38 @@ class MapContainer extends Component {
            ? {} : this.state.markers[this.props.selectedLocationIndex] }
           visible={this.state.showingInfoWindow}
           onClose={this.onCloseInfoWindow}>
-          {location ? (
-            <div>
-              <h3>{location.name}</h3>
-              {location.photos[0] ? (
-                <div>
-                  <img
-                    src={location.photos[0].prefix + "100x100" + location.photos[0].suffix}
-                    alt={location.name + " photo"}
-                  />
-                  <p>Image courtesy of Foursquare</p>
+          <div>
+            {location &&
+              <div>
+                <h3>{location.name}</h3>
+                {location.photos[0] &&
+                  <div>
+                    <img
+                      src={location.photos[0].prefix + "100x100" + location.photos[0].suffix}
+                      alt={location.name + " photo"}
+                    />
+                    <p>Image courtesy of Foursquare</p>
+                  </div>
+                }
+                <div className="info-window-address">
+                  {location.street} {location.city}, {location.state} {location.zip}
                 </div>
-              ) : (<div></div>)}
-              <div className="info-window-address">
-                {location.street} {location.city}, {location.state} {location.zip}
+                {location.url &&
+                  <div>
+                    <a href={location.url}
+                      className="info-window-link"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      open website
+                      <FontAwesomeIcon icon="external-link-alt"/>
+                    </a>
+                  </div>
+                }
               </div>
-              {location.url ? (
-                <div>
-                  <a href={location.url}
-                    className="info-window-link"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    open website
-                    <FontAwesomeIcon icon="external-link-alt"/>
-                  </a>
-                </div>
-              ) : (<div></div>)}
-            </div>
-          ) : (<div></div>)}
+            }
+          </div>
         </InfoWindow>
       </Map>
-
     )
   }
 }

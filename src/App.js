@@ -145,7 +145,6 @@ class App extends Component {
             onSelectLocation={this.selectLocation}
             selectedLocationIndex={this.state.selectedLocationIndex}
           />
-
         </div>
       </div>
     );
