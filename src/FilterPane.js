@@ -6,7 +6,6 @@ class FilterPane extends Component {
   static propTypes = {
     locations: PropTypes.array.isRequired,
     query: PropTypes.string.isRequired,
-    filterResults: PropTypes.array.isRequired,
     onToggleFilterPane: PropTypes.func.isRequired,
     onFilterLocations: PropTypes.func.isRequired,
     onSelectLocation: PropTypes.func.isRequired

@@ -22,7 +22,6 @@ class App extends Component {
     zoom: 11,
     query: '',
     locations: locations.sort(sortBy('name')),
-    filterResults: locations,
     filterPaneOpen: true,
     selectedLocationIndex: null
   }
@@ -123,7 +122,6 @@ class App extends Component {
         <FilterPane
           locations={this.state.locations}
           query={this.state.query}
-          filterResults={ Array.isArray(this.state.filterResults) ? this.state.filterResults : [] }
           onToggleFilterPane={this.toggleFilterPane}
           onFilterLocations={this.filterLocations}
           onSelectLocation={this.selectLocation}
@@ -140,7 +138,6 @@ class App extends Component {
             lng={this.state.lng}
             zoom={this.state.zoom}
             locations={this.state.locations}
-            // locations={this.state.filterResults}
             filterPaneOpen={this.state.filterPaneOpen}
             onSelectLocation={this.selectLocation}
             selectedLocationIndex={this.state.selectedLocationIndex}
