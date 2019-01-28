@@ -21,7 +21,7 @@ class FilterPane extends Component {
     return (
       <div id="filter-pane" className="filter-pane">
         <div className="filter-header">
-          <span>Locations</span>
+          <span id="list-label">Locations</span>
           <div>
             <button type="button" className="app-button close-filter" onClick={onToggleFilterPane}>
               <FontAwesomeIcon icon="angle-left"/>
@@ -45,7 +45,7 @@ class FilterPane extends Component {
           <ol className="locations-list">
             {locations.map((location, index) => {
                 return location.show && (
-                  <li key={index}>
+                  <li key={index} aria-labelledby="list-label">
                     <button
                       className="location-button"
                       key={index}

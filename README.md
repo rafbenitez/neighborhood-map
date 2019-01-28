@@ -14,13 +14,22 @@ Install project dependencies:
 ```
 $ npm install
 ```
-Start project server:
+### Start the application in Development Mode:
 
 ```
 $ npm start
 ```
 This runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Start the application in Production Mode:
+```
+$ npm run build
+$ serve -s build
+```
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.<br>
+Note: You may need to Open [http://0.0.0.0:5000](http://0.0.0.0:5000) instead depending on your device settings.<br>
+This runs the app in the production mode and enables the Serive Worker which provides offline functionality.<br>
 
 ## Built With
 
@@ -29,6 +38,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 * [Create React App](https://github.com/facebook/create-react-app)
 * [Foursquare](https://developer.foursquare.com/docs)
 * [Font Awesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
+* [Google Maps API](https://developers.google.com/maps/documentation/)
+* [Google Maps Platform Styling Wizard](https://mapstyle.withgoogle.com/)
 * [google-maps-react](https://www.npmjs.com/package/google-maps-react)
 * [prop-types](https://www.npmjs.com/package/prop-types)
 * [sort-by](https://www.npmjs.com/package/sort-by)

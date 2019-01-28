@@ -3,8 +3,15 @@ import {Map, InfoWindow, GoogleApiWrapper} from  'google-maps-react'
 import MapLoading from './MapLoading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
+import mapStyle from './data/mapStyle.json'
 
 const MAPS_API_KEY='AIzaSyCdKuhS-Bxv3iBsGlsIiuMbB3rxM8D1Pbw'
+
+window.gm_authFailure = function gm_authFailure() {
+  let errorMessage = 'Google Map Authorization Error. Please refresh the page.'
+  alert(errorMessage)
+  console.log(errorMessage)
+}
 
 // Referenced this article when coding this component
 // https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
@@ -40,7 +47,7 @@ class MapContainer extends Component {
         // A location was selected while an InfoWindow was already showing
         // Close the previous InfoWindow and Open the new InfoWindow
         if (nextProps.selectedLocationIndex !== this.props.selectedLocationIndex) {
-          this.state.markers[this.props.selectedLocationIndex].setAnimation(null)
+          this.props.selectedLocationIndex && this.state.markers[this.props.selectedLocationIndex].setAnimation(null)
           this.state.markers[nextProps.selectedLocationIndex].setAnimation(this.props.google.maps.Animation.BOUNCE);
         }
       } else {
@@ -129,6 +136,7 @@ class MapContainer extends Component {
         google={this.props.google}
         zoom={zoom}
         style={style}
+        styles={mapStyle}
         className={className}
         initialCenter={center}
         onClick={this.onCloseInfoWindow}>
@@ -141,7 +149,12 @@ class MapContainer extends Component {
             {location &&
               <div>
                 <h3>{location.name}</h3>
-                {location.photos[0] &&
+                {!location.foursquareAPISuccessful &&
+                  <div>
+                    <p>Foursquare Data Unavailable</p>
+                  </div>
+                }
+                {location.photos && location.photos[0] &&
                   <div>
                     <img
                       src={location.photos[0].prefix + "100x100" + location.photos[0].suffix}

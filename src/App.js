@@ -11,9 +11,9 @@ import locations from './data/locations.json'
 library.add(faBars, faFilter, faAngleLeft, faExternalLinkAlt)
 
 const FOURSQUARE_API = 'https://api.foursquare.com/v2/venues'
-const FOURSQUARE_CLIENT_ID = "MTD4Q1FAJTXP1RXCCEROWBDWWQWYCN5VA0VVOCYHEVIFT1GO";
-const FOURSQUARE_CLIENT_SECRET = "CKYXUB0EBZBIUEJITEEMFWOANZKKAWQLW5DTH0SUKCZM3KS5";
-const FOURSQUARE_API_VERSION = "20190101";
+const FOURSQUARE_CLIENT_ID = 'MTD4Q1FAJTXP1RXCCEROWBDWWQWYCN5VA0VVOCYHEVIFT1GO'
+const FOURSQUARE_CLIENT_SECRET = 'CKYXUB0EBZBIUEJITEEMFWOANZKKAWQLW5DTH0SUKCZM3KS5'
+const FOURSQUARE_API_VERSION = '20190101'
 
 class App extends Component {
   state = {
@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   filterVenues = (searchResults, location) => {
-    return searchResults.response.venues.filter(item => item.name.includes(location.name) || location.name.includes(item.name));
+    return searchResults.response.venues.filter(item => item.name.includes(location.name) || location.name.includes(item.name))
   }
 
   updateStateLocations = (location, index) => {
@@ -41,6 +41,7 @@ class App extends Component {
           return {
             ...item,
             foursquare: location.foursquare,
+            foursquareAPISuccessful: location.foursquareAPISuccessful,
             photos: location.photos
           }
         } else {
@@ -70,7 +71,8 @@ class App extends Component {
           let matchingVenues = this.filterVenues(searchResults, location)
           location = {
             ...location,
-            foursquare: matchingVenues[0]
+            foursquare: matchingVenues[0],
+            foursquareAPISuccessful: true,
           }
           if (location.foursquare) {
             let url =
@@ -86,6 +88,13 @@ class App extends Component {
                   this.updateStateLocations(location, index)
                   }
               })
+              .catch(reason => {
+                location = {
+                  ...location,
+                  foursquareAPISuccessful: false
+                }
+                this.updateStateLocations(location, index)
+              })
           } else {
             location = {
               ...location,
@@ -93,6 +102,13 @@ class App extends Component {
             }
             this.updateStateLocations(location, index)
           }
+        })
+        .catch(reason => {
+          location = {
+            ...location,
+            foursquareAPISuccessful: false
+          }
+          this.updateStateLocations(location, index)
         })
     })
   }
